@@ -184,16 +184,13 @@ def extract_subject(text: str):
     return None
 
 def extract_lecture_number(text: str):
-    # 1. أولاً: ابحث عن الكلمات النصية (العاشرة، العاشرة، إلخ) 
-    # لأنها أكثر تحديداً ولن تختلط مع الأرقام العادية
+    # 1. First: Search for words (tenth, first, etc.)
     for num in sorted(ORDINAL_WORDS.keys(), reverse=True):
         for word in ORDINAL_WORDS[num]:
             if re.search(rf"\b{word}\b", text):
                 return num
 
-    # 2. ثانياً: ابحث عن الأرقام (1, 2, 10...)
-    # استخدمنا \b لضمان أن الرقم يقف وحده (Word Boundary)
-    # واستخدمنا (?:...) لعدم التقاط الرقم جزئياً
+    # 2. Second: Search for digits (1, 2, 10...)
     match = re.search(r"\b([1-9][0-9]?)\b", text)
     if match:
         num = int(match.group(1))
@@ -206,6 +203,7 @@ def find_matching_file(subject, lecture_number):
     if not subject or not lecture_number:
         return None
 
+    # Matches files like: math_lecture_1.pdf or math_lecture_1_v2.pdf
     pattern = re.compile(
         rf"{re.escape(subject)}_lecture_{lecture_number}\b"
     )
@@ -231,23 +229,24 @@ def handle_request(body: RequestBody):
     subject = extract_subject(text)
     lecture_number = extract_lecture_number(text)
 
+    # --- UPDATED ENGLISH RESPONSES ---
     if not subject:
-        return {"type": "error", "message": "مش فاهم اسم المادة 😕"}
+        return {"type": "error", "message": "I couldn't identify the subject name 😕"}
 
     if not lecture_number:
-        return {"type": "error", "message": "مش فاهم رقم المحاضرة 😕"}
+        return {"type": "error", "message": "I couldn't identify the lecture number 😕"}
 
     file = find_matching_file(subject, lecture_number)
 
     if not file:
         return {
             "type": "error",
-            "message": f"محاضرة {lecture_number} لمادة {subject} مش موجودة."
+            "message": f"Lecture {lecture_number} for {subject} was not found."
         }
 
     return {
         "type": "file",
-        "message": f"تمام ✅ دي محاضرة {lecture_number} من مادة {subject}",
+        "message": f"Here is Lecture {lecture_number} for {subject} ✅",
         "download_url": f"/file/{file}"
     }
 
