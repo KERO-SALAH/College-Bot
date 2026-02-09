@@ -26,18 +26,138 @@ FILES_DIR = os.path.join(BASE_DIR, "data", "files")
 
 # كل أسماء المواد واحتمالات كتابتها
 SUBJECTS = {
+
+    # ================= Algorithms =================
     "algorithm": [
-        "algorithm", "algorithms", "algo",
-        "الالجوريزم", "الخوارزميات", "خوارزميات"
+        "algorithm", "algorithms", "algoritm", "algoritms",
+        "algorthim", "algorthims", "algorhythm", "algorythm",
+        "algo", "alg", "algoo", "algorit",
+        "analysis of algorithm", "design and analysis of algorithms",
+        "daa", "daaa",
+
+        "algorithmz", "algorithims", "algorithem",
+
+        "الالجوريزم", "الالگوريزم", "الالوجريزم",
+        "الجواريزم", "الاجوريزم", "الاجوريثم",
+        "الخوارزميات", "الخوارزميأت", "الخوارزميات",
+        "خوارزميات", "خوارزميه", "خوارزمي",
+        "الخوازرميات", "الخوارزمياتت"
     ],
+
+    # ================= Math =================
     "math": [
-        "math", "mathematics", "ماث", "رياضة", "رياضيات"
+        "math", "maths", "mathematics", "mathematic",
+        "mathemathics", "mathmatic", "mathimatics",
+        "applied math", "discrete math",
+        "discret math", "descrete math", "disc math",
+        "calc", "calculus", "calculs",
+        "linear algebra", "lin algebra",
+
+        "ماث", "مات", "ماثس",
+        "رياضة", "رياضيات", "رياظيات", "رياضيت",
+        "رياضه", "رياضيأت",
+        "رياضة متقطعة", "رياضة متقطعه",
+        "ديسكريت ماث", "دسكريت ماث", "دسكريت",
+        "تفاضل", "تكامل", "جبر"
     ],
+
+    # ================= Data Structures =================
     "ds": [
-        "data structure", "ds",
-        "داتا ستراكشر", "هياكل البيانات"
+        "data structure", "data structures",
+        "data stucture", "data stracture",
+        "data structre", "data sturcture",
+        "data strcture", "data strucure",
+        "ds", "d.s", "dsa",
+
+        "داتا ستراكشر", "داتا ستركتشر", "داتا ستراكتشر",
+        "داتا ستراكتور", "داتا ستركتور",
+        "داتا ستراكشرز", "داتاستراكشر",
+        "هياكل البيانات", "هياكل البينات",
+        "هيكل البيانات", "هيكل الداتا"
+    ],
+
+    # ================= Automata / TOC =================
+    "automata": [
+        "automata", "automatas", "automatta",
+        "automata theory", "automata theroy",
+        "theory of computation", "theory of computation",
+        "theroy of computation", "theory computation",
+        "toc", "t.o.c", "tooc",
+
+        "finite automata", "finite automatta",
+        "dfa", "nfa", "pda",
+        "pushdown automata", "push down automata",
+        "turing machine", "turing mashine",
+
+        "اوتوماتا", "أوتوماتا", "اوتوماته",
+        "نظرية الحوسبة", "نظرية الحوسبه",
+        "نظرية الحسابات",
+        "نظرية الالات", "نظريه الالات",
+        "لغات شكلية", "لغات شكليه", "لغات صورية"
+    ],
+
+    # ================= Artificial Intelligence =================
+    "ai": [
+        "ai", "a.i", "artificial intelligence",
+        "artifical intelligence", "artificial inteligence",
+        "artificial intellegence", "artifical inteligence",
+        "machine intelligence",
+        "intelligent systems",
+
+        "ذكاء اصطناعي", "الذكاء الاصطناعي",
+        "الزكاء الاصطناعي", "الذكاء الاصتناعي",
+        "ذكاء صناعي", "زكاء اصطناعي",
+        "aii", "aie"
+    ],
+
+    # ================= Software Engineering =================
+    "software": [
+        "software", "softwear", "sofware", "soft ware",
+        "software engineering", "softwear engineering",
+        "sofware engineering", "software eng",
+        "se", "s.e",
+
+        "software development", "soft dev",
+        "sw development",
+
+        "هندسة البرمجيات", "هندسه البرمجيات",
+        "هندسة البرمجات",
+        "تطوير البرمجيات", "تطوير البرمجات",
+        "سوفت وير", "سوفتوير", "سوفت ويرر"
+    ],
+
+    # ================= Image Processing =================
+    "image_processing": [
+        "image processing", "img processing",
+        "image proccessing", "image procesing",
+        "image proccesing",
+        "digital image processing", "dip",
+
+        "image analysis", "img analysis",
+
+        "معالجة الصور", "معالجه الصور",
+        "معالجة الصوره", "معالجة الصورر",
+        "معالجة صوره",
+        "ديجيتال ايمدج بروسيسنج",
+        "ايمدج بروسيسنج"
+    ],
+
+    # ================= Computer Vision =================
+    "computer_vision": [
+        "computer vision", "computer vission",
+        "computer vison", "cmp vision",
+        "cv", "c.v",
+
+        "machine vision",
+
+        "رؤية الحاسوب", "رؤية الحاسب",
+        "رؤية الكمبيوتر", "روية الحاسوب",
+        "رؤيه الحاسوب",
+        "كمبيوتر فيجن", "كومبيوتر فيجن",
+        "كمبيوتر ڤيجن"
     ]
 }
+
 
 # تحويل الأرقام المكتوبة
 ORDINALS = {
