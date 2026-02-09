@@ -21,10 +21,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FILES_DIR = os.path.join(BASE_DIR, "data", "files")
 
 # ======================
-# Helpers
+# SUBJECTS (FULL)
 # ======================
-
-# كل أسماء المواد واحتمالات كتابتها
 SUBJECTS = {
 
     # ================= Algorithms =================
@@ -34,14 +32,15 @@ SUBJECTS = {
         "algo", "alg", "algoo", "algorit",
         "analysis of algorithm", "design and analysis of algorithms",
         "daa", "daaa",
-
         "algorithmz", "algorithims", "algorithem",
 
         "الالجوريزم", "الالگوريزم", "الالوجريزم",
         "الجواريزم", "الاجوريزم", "الاجوريثم",
         "الخوارزميات", "الخوارزميأت", "الخوارزميات",
         "خوارزميات", "خوارزميه", "خوارزمي",
-        "الخوازرميات", "الخوارزمياتت"
+        "الخوازرميات", "الخوارزمياتت",
+        "تحليل الخوارزميات", "تصميم وتحليل الخوارزميات",
+        "الجو", "algo"
     ],
 
     # ================= Math =================
@@ -80,29 +79,23 @@ SUBJECTS = {
     "automata": [
         "automata", "automatas", "automatta",
         "automata theory", "automata theroy",
-        "theory of computation", "theory of computation",
-        "theroy of computation", "theory computation",
-        "toc", "t.o.c", "tooc",
+        "theory of computation", "theroy of computation",
+        "toc", "t.o.c", "tooc", "auto",
 
-        "finite automata", "finite automatta",
-        "dfa", "nfa", "pda",
-        "pushdown automata", "push down automata",
-        "turing machine", "turing mashine",
+        "finite automata", "dfa", "nfa", "pda",
+        "pushdown automata", "turing machine",
 
         "اوتوماتا", "أوتوماتا", "اوتوماته",
         "نظرية الحوسبة", "نظرية الحوسبه",
-        "نظرية الحسابات",
-        "نظرية الالات", "نظريه الالات",
-        "لغات شكلية", "لغات شكليه", "لغات صورية"
+        "نظرية الحسابات", "نظرية الالات",
+        "لغات شكلية", "لغات صورية"
     ],
 
     # ================= Artificial Intelligence =================
     "ai": [
         "ai", "a.i", "artificial intelligence",
         "artifical intelligence", "artificial inteligence",
-        "artificial intellegence", "artifical inteligence",
-        "machine intelligence",
-        "intelligent systems",
+        "machine intelligence", "intelligent systems",
 
         "ذكاء اصطناعي", "الذكاء الاصطناعي",
         "الزكاء الاصطناعي", "الذكاء الاصتناعي",
@@ -114,30 +107,26 @@ SUBJECTS = {
     "software": [
         "software", "softwear", "sofware", "soft ware",
         "software engineering", "softwear engineering",
-        "sofware engineering", "software eng",
-        "se", "s.e",
+        "software eng", "se", "s.e",
 
-        "software development", "soft dev",
-        "sw development",
+        "software development", "sw development",
 
         "هندسة البرمجيات", "هندسه البرمجيات",
         "هندسة البرمجات",
         "تطوير البرمجيات", "تطوير البرمجات",
-        "سوفت وير", "سوفتوير", "سوفت ويرر"
+        "سوفت وير", "سوفتوير"
     ],
 
     # ================= Image Processing =================
     "image_processing": [
         "image processing", "img processing",
         "image proccessing", "image procesing",
-        "image proccesing",
-        "digital image processing", "dip",
+        "digital image processing", "dip", "ip",
 
         "image analysis", "img analysis",
 
         "معالجة الصور", "معالجه الصور",
         "معالجة الصوره", "معالجة الصورر",
-        "معالجة صوره",
         "ديجيتال ايمدج بروسيسنج",
         "ايمدج بروسيسنج"
     ],
@@ -152,24 +141,40 @@ SUBJECTS = {
 
         "رؤية الحاسوب", "رؤية الحاسب",
         "رؤية الكمبيوتر", "روية الحاسوب",
-        "رؤيه الحاسوب",
-        "كمبيوتر فيجن", "كومبيوتر فيجن",
-        "كمبيوتر ڤيجن"
+        "كمبيوتر فيجن", "كومبيوتر فيجن"
     ]
 }
 
-
-# تحويل الأرقام المكتوبة
-ORDINALS = {
-    1: ["1", "one", "first", "الأولى", "الاولى", "اولى"],
-    2: ["2", "two", "second", "الثانية", "الثانيه"],
-    3: ["3", "three", "third", "الثالثة", "الثالثه"],
-    4: ["4", "four", "الرابعة", "الرابعه"],
-    5: ["5", "five", "الخامسة", "الخامسه"]
+# ======================
+# NUMBER NORMALIZATION
+# ======================
+ARABIC_DIGITS = {
+    "٠": "0","١": "1","٢": "2","٣": "3","٤": "4",
+    "٥": "5","٦": "6","٧": "7","٨": "8","٩": "9"
 }
 
+ORDINAL_WORDS = {
+    10: ["العاشرة","عاشر","ten","tenth","x"],
+    9: ["التاسعة","تاسع","nine","ninth"],
+    8: ["الثامنة","ثامن","eight","eighth"],
+    7: ["السابعة","سابع","seven","seventh"],
+    6: ["السادسة","سادس","six","sixth"],
+    5: ["الخامسة","خامس","five","fifth"],
+    4: ["الرابعة","رابع","four","fourth"],
+    3: ["الثالثة","ثالث","three","third"],
+    2: ["الثانية","ثاني","two","second"],
+    1: ["الأولى","اولى","أولى","first","one"]
+}
+
+# ======================
+# HELPERS
+# ======================
 def normalize(text: str) -> str:
-    return re.sub(r"\s+", " ", text.lower())
+    text = text.lower()
+    for ar, en in ARABIC_DIGITS.items():
+        text = text.replace(ar, en)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
 
 def extract_subject(text: str):
     for subject, keywords in SUBJECTS.items():
@@ -179,41 +184,43 @@ def extract_subject(text: str):
     return None
 
 def extract_lecture_number(text: str):
-    # 1️⃣ دور على رقم صريح (10, 12, 3 ...)
-    match = re.search(r"\b(\d{1,2})\b", text)
+    # 1. أولاً: ابحث عن الكلمات النصية (العاشرة، العاشرة، إلخ) 
+    # لأنها أكثر تحديداً ولن تختلط مع الأرقام العادية
+    for num in sorted(ORDINAL_WORDS.keys(), reverse=True):
+        for word in ORDINAL_WORDS[num]:
+            if re.search(rf"\b{word}\b", text):
+                return num
+
+    # 2. ثانياً: ابحث عن الأرقام (1, 2, 10...)
+    # استخدمنا \b لضمان أن الرقم يقف وحده (Word Boundary)
+    # واستخدمنا (?:...) لعدم التقاط الرقم جزئياً
+    match = re.search(r"\b([1-9][0-9]?)\b", text)
     if match:
-        return int(match.group(1))
-
-    # 2️⃣ لو مفيش رقم، دور على كلمات (الأولى – الثانية – first ...)
-    for number, keywords in ORDINALS.items():
-        for k in keywords:
-            if re.search(rf"\b{k}\b", text):
-                return number
-
-    return None
-
-def extract_type(text: str):
-    if "محاضرة" in text or "lecture" in text:
-        return "lecture"
+        num = int(match.group(1))
+        if 1 <= num <= 50:
+            return num
+            
     return None
 
 def find_matching_file(subject, lecture_number):
     if not subject or not lecture_number:
         return None
 
+    pattern = re.compile(
+        rf"{re.escape(subject)}_lecture_{lecture_number}\b"
+    )
+
     for file in os.listdir(FILES_DIR):
         name = file.lower()
-        if (
-            subject in name and
-            f"lecture_{lecture_number}" in name
-        ):
+        if pattern.search(name):
             return file
+
     return None
+
 
 # ======================
 # API
 # ======================
-
 class RequestBody(BaseModel):
     message: str
 
@@ -223,19 +230,12 @@ def handle_request(body: RequestBody):
 
     subject = extract_subject(text)
     lecture_number = extract_lecture_number(text)
-    lecture_type = extract_type(text)
 
     if not subject:
-        return {
-            "type": "error",
-            "message": "مش فاهم اسم المادة 😕 (مثال: algorithm / math)"
-        }
+        return {"type": "error", "message": "مش فاهم اسم المادة 😕"}
 
     if not lecture_number:
-        return {
-            "type": "error",
-            "message": "مش فاهم رقم المحاضرة 😕 (مثال: الأولى / 1 / first)"
-        }
+        return {"type": "error", "message": "مش فاهم رقم المحاضرة 😕"}
 
     file = find_matching_file(subject, lecture_number)
 
@@ -254,11 +254,10 @@ def handle_request(body: RequestBody):
 @app.get("/file/{filename}")
 def get_file(filename: str):
     path = os.path.join(FILES_DIR, filename)
-
     if not os.path.exists(path):
-        return JSONResponse(
-            status_code=404,
-            content={"error": "File not found"}
-        )
-
+        return JSONResponse(status_code=404, content={"error": "File not found"})
     return FileResponse(path, filename=filename)
+
+@app.get("/")
+def home():
+    return {"status": "College Bot API is running"}
